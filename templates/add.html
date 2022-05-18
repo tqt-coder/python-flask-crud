@@ -1,19 +1,14 @@
 <doctype html>
-<title>Add User - Python Flask MySQL CRUD</title>
-<h2>Add User</h2>
-<form method="post" action="/add">
-    <dl>
+	<title>Insert Data Python</title>
+	<h1>Upload file CSV</h1>
+	<form method="post" action="/add" enctype="multipart/form-data">
+		<dl>
+			<p>
+				<input name="file" value="" type="file" placeholder="Insert file ...." autocomplete="off" required>
+			</p>
+
+		</dl>
 		<p>
-			<input name="inputName" value="" type="text" placeholder="Name" autocomplete="off" required>
+			<input type="submit" value="Submit">
 		</p>
-		<p>
-			<input name="inputEmail" value="" type="text" placeholder="Email" autocomplete="off" required>
-		</p>
-		<p>
-			<input name="inputPassword" value="" type="password" placeholder="Password" autocomplete="off" required>
-		</p>
-    </dl>
-    <p>
-		<input type="submit" value="Submit">
-	</p>
-</form>
+	</form>
