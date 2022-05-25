@@ -93,7 +93,7 @@ def uploadFiles():
         parseCSV(file_path)
         # save the file
 
-        return redirect('/')
+        return redirect('/crud')
 
 
 def parseCSV(filePath):
@@ -137,6 +137,11 @@ def parseCSV(filePath):
 
 
 @app.route('/')
+def MainPage():
+    return render_template('single.html')
+
+
+@app.route('/crud')
 def users():
     try:
         conn = mysql.connect()
@@ -211,7 +216,7 @@ def update_user():
             cursor.execute(sql, data)
             conn.commit()
             flash('User updated successfully!')
-            return redirect('/')
+            return redirect('/crud')
         else:
             return 'Error while updating user'
     except Exception as e:
@@ -230,7 +235,7 @@ def delete_user(id):
             "DELETE FROM forbes_2022_billionaires WHERE id=%s", (id,))
         conn.commit()
         flash('User deleted successfully!')
-        return redirect('/')
+        return redirect('/crud')
     except Exception as e:
         print(e)
     finally:
