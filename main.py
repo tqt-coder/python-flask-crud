@@ -60,6 +60,26 @@ def add_user_view():
     return render_template('add.html')
 
 
+@app.route('/main')
+def general():
+    return render_template('./single.html')
+
+
+@app.route('/us')
+def us():
+    return render_template('us.html')
+
+
+@app.route('/india')
+def india():
+    return render_template('india.html')
+
+
+@app.route('/china')
+def china():
+    return render_template('china.html')
+
+
 @app.route('/add', methods=['POST'])
 def uploadFiles():
     # get the uploaded file
@@ -73,8 +93,7 @@ def uploadFiles():
         parseCSV(file_path)
         # save the file
 
-    # return redirect('/')
-        return 'Commit'
+        return redirect('/')
 
 
 def parseCSV(filePath):
