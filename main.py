@@ -148,7 +148,7 @@ def users():
         cursor = conn.cursor(pymysql.cursors.DictCursor)
 
         cursor.execute(
-            "SELECT * FROM forbes_2022_billionaires LIMIT 10")
+            "SELECT * FROM forbes_2022_billionaires LIMIT 20")
         rows = cursor.fetchall()
 
         table = Results(rows)

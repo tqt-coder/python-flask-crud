@@ -1,8 +1,59 @@
-<doctype html>
-	<title>List of users - Python Flask MySQL CRUD</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Page Billionaires</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+		.title-list{
+			text-align: center;
+			font-size: 30px;
+			text-transform: uppercase;
+			color: rgb(221, 148, 14);
+			font-weight: bold;
+		}
+		.app{
+		
+			overflow: scroll;
+			margin: 20px 30px;
+		}
+		table{
+			border-collapse: collapse;
+			font-size: 12px;
+		}
+		.btn-add{
+			margin: 10px 20px 40px; 
+		}
+		th{
+			color: rgb(232, 74, 74);
+			font-size: 14px;
+			text-transform: uppercase;
+			text-align: center;
+			margin: 5px;
+			background-color: rgb(53, 181, 104);
+			padding: 5px;
+			font-weight: 400;
+		}
+	
+		table td:nth-child(19) tr{
+			display: inline-block;
+			display: -webkit-box;
+			height: 	36px;
+			line-height: 1.3;
+			-webkit-line-clamp: 3; 
+			-webkit-box-orient: vertical;
+			overflow-y: hidden;
+			text-overflow: ellipsis;
+			margin-top:10px;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
 
-	<p><a href="{{ url_for('.add_user_view') }}"> Add Data </a></p>
-
+<div class="app">
 	<p>
 		{% with messages = get_flashed_messages() %}
 		{% if messages %}
@@ -14,5 +65,10 @@
 	{% endif %}
 	{% endwith %}
 	</p>
-
+	<h2 class="title-list">Danh sách tỷ phú</h2>
+	<a class="btn btn-primary btn-add" href="{{ url_for('.add_user_view') }}"> Add Data </a>
 	{{ table }}
+</div>
+	
+</body>
+</html>

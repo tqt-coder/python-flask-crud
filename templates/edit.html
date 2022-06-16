@@ -1,225 +1,305 @@
-<doctype html>
+<html html>
   <html>
     <title>Edit User - Python Flask MySQL CRUD</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
-      h2 {
-        color: red;
+      h2.a {
+        text-align: center;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      input[type="text"],
+      select,
+      textarea {
+        width: 50%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+      input[type="age"],
+      select,
+      textarea {
+        width: 50%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+      input[type="numberOfSiblings"],
+      select,
+      textarea {
+        width: 50%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      .container {
+        width: 100%;
+        border-radius: 5px;
+        --c: red; /* needed for firefox to have a valid output */
+        cursor: pointer;
+        display: inline-block;
+        transition: --c 0.5s;
+        background: linear-gradient(var(--c), blue);
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .form-info {
+        width: 100%;
+      }
+      dl p {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .contain .btn-submit {
+        display: block;
+      }
+      .btn-submit {
+        display: inline-block;
+        width: 150px !important;
+        height: 40px;
+        padding: 10px;
+        margin: 20px auto;
+        background-color: #257b2b;
+        font-size: 25px;
+        border-radius: 10px;
+        border-color: transparent;
+        line-height: 18px;
+        color: #fff;
       }
     </style>
     <body>
-      <h2>Edit User</h2>
-      <form method="post" action="/update">
-        <dl>
-          <p>
-            <input
-              name="rank_new"
-              value="{{ row['rank_new'] }}"
-              type="text"
-              placeholder="rank_new"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="personName"
-              value="{{ row['personName'] }}"
-              type="text"
-              placeholder="personName"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="age"
-              value="{{ row['age'] }}"
-              type="age"
-              placeholder="age"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="finalWorth"
-              value="{{ row['finalWorth'] }}"
-              type="text"
-              placeholder="finalWorth"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="category"
-              value="{{ row['category'] }}"
-              type="text"
-              placeholder="category"
-              autocomplete="off"
-              required
-            />
-          </p>
+      <div class="container">
+        <form method="post" class="form-info" action="/update">
+          <dl>
+            <h2 class="a">Edit User</h2>
+            <p>
+              <input
+                name="rank_new"
+                value="{{ row['rank_new'] }}"
+                type="text"
+                placeholder="rank_new"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="personName"
+                value="{{ row['personName'] }}"
+                type="text"
+                placeholder="personName"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="age"
+                value="{{ row['age'] }}"
+                type="age"
+                placeholder="age"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="finalWorth"
+                value="{{ row['finalWorth'] }}"
+                type="text"
+                placeholder="finalWorth"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="category"
+                value="{{ row['category'] }}"
+                type="text"
+                placeholder="category"
+                autocomplete="off"
+                required
+              />
+            </p>
 
-          <p>
-            <input
-              name="source"
-              value="{{ row['source'] }}"
-              type="text"
-              placeholder="source"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="country"
-              value="{{ row['country'] }}"
-              type="text"
-              placeholder="country"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="state"
-              value="{{ row['state'] }}"
-              type="text"
-              placeholder="state"
-              autocomplete="off"
-              required
-            />
-          </p>
+            <p>
+              <input
+                name="source"
+                value="{{ row['source'] }}"
+                type="text"
+                placeholder="source"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="country"
+                value="{{ row['country'] }}"
+                type="text"
+                placeholder="country"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="state"
+                value="{{ row['state'] }}"
+                type="text"
+                placeholder="state"
+                autocomplete="off"
+                required
+              />
+            </p>
 
-          <p>
-            <input
-              name="city"
-              value="{{ row['city'] }}"
-              type="text"
-              placeholder="city"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="countryOfCitizenship"
-              value="{{ row['countryOfCitizenship'] }}"
-              type="text"
-              placeholder="countryOfCitizenship"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="organization"
-              value="{{ row['organization'] }}"
-              type="text"
-              placeholder="organization"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="selfMade"
-              value="{{ row['selfMade'] }}"
-              type="text"
-              placeholder="selfMade"
-              autocomplete="off"
-              required
-            />
-          </p>
+            <p>
+              <input
+                name="city"
+                value="{{ row['city'] }}"
+                type="text"
+                placeholder="city"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="countryOfCitizenship"
+                value="{{ row['countryOfCitizenship'] }}"
+                type="text"
+                placeholder="countryOfCitizenship"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="organization"
+                value="{{ row['organization'] }}"
+                type="text"
+                placeholder="organization"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="selfMade"
+                value="{{ row['selfMade'] }}"
+                type="text"
+                placeholder="selfMade"
+                autocomplete="off"
+                required
+              />
+            </p>
 
-          <p>
-            <input
-              name="gender"
-              value="{{ row['gender'] }}"
-              type="text"
-              placeholder="gender"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="birthDate"
-              value="{{ row['birthDate'] }}"
-              type="text"
-              placeholder="birthDate"
-              autocomplete="off"
-              required
-            />
-          </p>
+            <p>
+              <input
+                name="gender"
+                value="{{ row['gender'] }}"
+                type="text"
+                placeholder="gender"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="birthDate"
+                value="{{ row['birthDate'] }}"
+                type="text"
+                placeholder="birthDate"
+                autocomplete="off"
+                required
+              />
+            </p>
 
-          <p>
-            <input
-              name="title"
-              value="{{ row['title'] }}"
-              type="text"
-              placeholder="title"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="philanthropyScore"
-              value="{{ row['philanthropyScore'] }}"
-              type="text"
-              placeholder="philanthropyScore"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="residenceMsa"
-              value="{{ row['residenceMsa'] }}"
-              type="text"
-              placeholder="residenceMsa"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="numberOfSiblings"
-              value="{{ row['numberOfSiblings'] }}"
-              type="numberOfSiblings"
-              placeholder="numberOfSiblings"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="bio"
-              value="{{ row['bio'] }}"
-              type="text"
-              placeholder="bio"
-              autocomplete="off"
-              required
-            />
-          </p>
-          <p>
-            <input
-              name="about"
-              value="{{ row['about'] }}"
-              type="text"
-              placeholder="about"
-              autocomplete="off"
-              required
-            />
-          </p>
-        </dl>
-        <p>
-          <input name="id" value="{{ row['id'] }}" type="hidden" />
-          <input type="submit" value="Submit" />
-        </p>
-      </form>
+            <p>
+              <input
+                name="title"
+                value="{{ row['title'] }}"
+                type="text"
+                placeholder="title"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="philanthropyScore"
+                value="{{ row['philanthropyScore'] }}"
+                type="text"
+                placeholder="philanthropyScore"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="residenceMsa"
+                value="{{ row['residenceMsa'] }}"
+                type="text"
+                placeholder="residenceMsa"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="numberOfSiblings"
+                value="{{ row['numberOfSiblings'] }}"
+                type="numberOfSiblings"
+                placeholder="numberOfSiblings"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="bio"
+                value="{{ row['bio'] }}"
+                type="text"
+                placeholder="bio"
+                autocomplete="off"
+                required
+              />
+            </p>
+            <p>
+              <input
+                name="about"
+                value="{{ row['about'] }}"
+                type="text"
+                placeholder="about"
+                autocomplete="off"
+                required
+              />
+            </p>
+          </dl>
+          <div class="contain">
+            <input name="id" value="{{ row['id'] }}" type="hidden" />
+            <button class="btn-submit" type="submit">
+              <i class="far fa-save" style="margin-right: 4px"></i>UPDATE
+            </button>
+          </div>
+        </form>
+      </div>
     </body>
   </html>
-</doctype>
+</html>
