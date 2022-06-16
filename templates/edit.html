@@ -1,95 +1,225 @@
 <doctype html>
-	<title>Edit User - Python Flask MySQL CRUD</title>
-	<h2>Edit User</h2>
-	<form method="post" action="/update">
-		<dl>
+  <html>
+    <title>Edit User - Python Flask MySQL CRUD</title>
+    <style>
+      h2 {
+        color: red;
+      }
+    </style>
+    <body>
+      <h2>Edit User</h2>
+      <form method="post" action="/update">
+        <dl>
+          <p>
+            <input
+              name="rank_new"
+              value="{{ row['rank_new'] }}"
+              type="text"
+              placeholder="rank_new"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="personName"
+              value="{{ row['personName'] }}"
+              type="text"
+              placeholder="personName"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="age"
+              value="{{ row['age'] }}"
+              type="age"
+              placeholder="age"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="finalWorth"
+              value="{{ row['finalWorth'] }}"
+              type="text"
+              placeholder="finalWorth"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="category"
+              value="{{ row['category'] }}"
+              type="text"
+              placeholder="category"
+              autocomplete="off"
+              required
+            />
+          </p>
 
-			<p>
-				<input name="rank_new" value="{{ row['rank_new'] }}" type="text" placeholder="rank_new"
-					autocomplete="off" required>
-			</p>
-			<p>
-				<input name="personName" value="{{ row['personName'] }}" type="text" placeholder="personName"
-					autocomplete="off" required>
-			</p>
-			<p>
-				<input name="age" value="{{ row['age'] }}" type="age" placeholder="age" autocomplete="off" required>
-			</p>
-			<p>
-				<input name="finalWorth" value="{{ row['finalWorth'] }}" type="text" placeholder="finalWorth"
-					autocomplete="off" required>
-			</p>
-			<p>
-				<input name="category" value="{{ row['category'] }}" type="text" placeholder="category"
-					autocomplete="off" required>
-			</p>
+          <p>
+            <input
+              name="source"
+              value="{{ row['source'] }}"
+              type="text"
+              placeholder="source"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="country"
+              value="{{ row['country'] }}"
+              type="text"
+              placeholder="country"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="state"
+              value="{{ row['state'] }}"
+              type="text"
+              placeholder="state"
+              autocomplete="off"
+              required
+            />
+          </p>
 
+          <p>
+            <input
+              name="city"
+              value="{{ row['city'] }}"
+              type="text"
+              placeholder="city"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="countryOfCitizenship"
+              value="{{ row['countryOfCitizenship'] }}"
+              type="text"
+              placeholder="countryOfCitizenship"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="organization"
+              value="{{ row['organization'] }}"
+              type="text"
+              placeholder="organization"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="selfMade"
+              value="{{ row['selfMade'] }}"
+              type="text"
+              placeholder="selfMade"
+              autocomplete="off"
+              required
+            />
+          </p>
 
-			<p>
-				<input name="source" value="{{ row['source'] }}" type="text" placeholder="source" autocomplete="off"
-					required>
-			</p>
-			<p>
-				<input name="country" value="{{ row['country'] }}" type="text" placeholder="country" autocomplete="off"
-					required>
-			</p>
-			<p>
-				<input name="state" value="{{ row['state'] }}" type="text" placeholder="state" autocomplete="off"
-					required>
-			</p>
+          <p>
+            <input
+              name="gender"
+              value="{{ row['gender'] }}"
+              type="text"
+              placeholder="gender"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="birthDate"
+              value="{{ row['birthDate'] }}"
+              type="text"
+              placeholder="birthDate"
+              autocomplete="off"
+              required
+            />
+          </p>
 
-			<p>
-				<input name="city" value="{{ row['city'] }}" type="text" placeholder="city" autocomplete="off" required>
-			</p>
-			<p>
-				<input name="countryOfCitizenship" value="{{ row['countryOfCitizenship'] }}" type="text"
-					placeholder="countryOfCitizenship" autocomplete="off" required>
-			</p>
-			<p>
-				<input name="organization" value="{{ row['organization'] }}" type="text" placeholder="organization"
-					autocomplete="off" required>
-			</p>
-			<p>
-				<input name="selfMade" value="{{ row['selfMade'] }}" type="text" placeholder="selfMade"
-					autocomplete="off" required>
-			</p>
-
-
-			<p>
-				<input name="gender" value="{{ row['gender'] }}" type="text" placeholder="gender" autocomplete="off"
-					required>
-			</p>
-			<p>
-				<input name="birthDate" value="{{ row['birthDate'] }}" type="text" placeholder="birthDate"
-					autocomplete="off" required>
-			</p>
-
-			<p>
-				<input name="title" value="{{ row['title'] }}" type="text" placeholder="title" autocomplete="off"
-					required>
-			</p>
-			<p>
-				<input name="philanthropyScore" value="{{ row['philanthropyScore'] }}" type="text"
-					placeholder="philanthropyScore" autocomplete="off" required>
-			</p>
-			<p>
-				<input name="residenceMsa" value="{{ row['residenceMsa'] }}" type="text" placeholder="residenceMsa"
-					autocomplete="off" required>
-			</p>
-			<p>
-				<input name="numberOfSiblings" value="{{ row['numberOfSiblings'] }}" type="numberOfSiblings"
-					placeholder="numberOfSiblings" autocomplete="off" required>
-			</p>
-			<p>
-				<input name="bio" value="{{ row['bio'] }}" type="text" placeholder="bio" autocomplete="off" required>
-			</p>
-			<p>
-				<input name="about" value="{{ row['about'] }}" type="text" placeholder="about" autocomplete="off"
-					required>
-			</p>
-		</dl>
-		<p>
-			<input name="id" value="{{ row['id'] }}" type="hidden">
-			<input type="submit" value="Submit">
-		</p>
-	</form>
+          <p>
+            <input
+              name="title"
+              value="{{ row['title'] }}"
+              type="text"
+              placeholder="title"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="philanthropyScore"
+              value="{{ row['philanthropyScore'] }}"
+              type="text"
+              placeholder="philanthropyScore"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="residenceMsa"
+              value="{{ row['residenceMsa'] }}"
+              type="text"
+              placeholder="residenceMsa"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="numberOfSiblings"
+              value="{{ row['numberOfSiblings'] }}"
+              type="numberOfSiblings"
+              placeholder="numberOfSiblings"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="bio"
+              value="{{ row['bio'] }}"
+              type="text"
+              placeholder="bio"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              name="about"
+              value="{{ row['about'] }}"
+              type="text"
+              placeholder="about"
+              autocomplete="off"
+              required
+            />
+          </p>
+        </dl>
+        <p>
+          <input name="id" value="{{ row['id'] }}" type="hidden" />
+          <input type="submit" value="Submit" />
+        </p>
+      </form>
+    </body>
+  </html>
+</doctype>
